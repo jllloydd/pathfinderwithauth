@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,5 @@ route::get('superadmin/dashboard', [SuperAdminController::class,'index'])->middl
 route::put('superadmin/update/{id}', [SuperAdminController::class, 'update'])->middleware(['auth', 'superadmin', 'verified'])->name('superadmin/update');
 
 route::get('superadmin/delete/{id}', [SuperAdminController::class, 'destroy'])->middleware(['auth', 'superadmin','verified'])->name('superadmin/delete');
+
+route::post('createappointment', [UserController::class, 'store'])->name('createappointment');
