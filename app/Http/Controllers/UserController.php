@@ -37,4 +37,19 @@ class UserController extends Controller
 
         return redirect('dashboard')->with('status', 'Appointment created successfully! You may now check the status of your appointment.');
     }
+
+    public function get(){
+
+       // $appointments = Appointment::get();
+
+       $userid = Auth::user()->id;
+
+       $appointmentinfo = DB::table('appointments')
+        ->where('user_id', $userid)
+        ->get();
+
+            
+        return view('checkstatus', compact('appointmentinfo'));
+    }
+
 }

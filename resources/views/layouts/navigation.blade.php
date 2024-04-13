@@ -26,6 +26,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <h1 class="text-base">Booking</h1>
                     </x-nav-link>
+                    <x-nav-link :href="route('checkstatus')" :active="request()->routeIs('checkstatus')">
+                        <h1 class="text-base">Appointment Status</h1>
+                    </x-nav-link>
                     @elseif (Auth::user()->usertype == 'superadmin')
                     <x-nav-link :href="route('superadmin/dashboard')" :active="request()->routeIs('superadmin/dashboard')">
                         <h1 class="text-base">SuperAdmin Dashboard</h1>
@@ -90,6 +93,9 @@
                     @if (Auth::user()->usertype == 'user')
                     <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <h1 class="text-base">Booking</h1>
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('checkstatus')" :active="request()->routeIs('checkstatus')">
+                        <h1 class="text-base">Appointment Status</h1>
                     </x-responsive-nav-link>
                     @elseif (Auth::user()->usertype == 'superadmin')
                     <x-responsive-nav-link :href="route('superadmin/dashboard')" :active="request()->routeIs('superadmin/dashboard')">
