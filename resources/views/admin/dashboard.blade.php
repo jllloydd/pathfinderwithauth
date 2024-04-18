@@ -60,7 +60,6 @@
                                         <select name="status" id="status" required>
                                             <option value="Pending" {{$appointment->status == 'Pending'? 'selected' : ''}}>Pending</option>
                                             <option value="Active" {{$appointment->status == 'Active'? 'selected' : ''}}>Active</option>
-                                            <option value="Done" {{$appointment->status == 'Done'? 'selected' : ''}}>Done</option>
                                         </select>
                                     </td>
 
