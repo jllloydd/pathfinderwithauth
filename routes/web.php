@@ -37,3 +37,5 @@ route::get('superadmin/delete/{id}', [SuperAdminController::class, 'destroy'])->
 route::post('createappointment', [UserController::class, 'store'])->name('createappointment')->middleware(['auth', 'verified']);
 
 route::get('checkstatus', [UserController::class, 'get'])->name('checkstatus')->middleware(['auth', 'verified']);
+
+route::put('admin/update/{id}', [AdminController::class, 'update'])->name('admin/update')->middleware('admin', 'auth', 'verified');
