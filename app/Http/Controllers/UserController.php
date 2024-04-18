@@ -52,4 +52,15 @@ class UserController extends Controller
         return view('checkstatus', compact('appointmentinfo'));
     }
 
+    public function destroy(){
+        $userid = Auth::user()->id;
+
+        $appointmentinfo = DB::table('appointments')
+         ->where('user_id', $userid)
+         ->delete();
+
+        return redirect('dashboard')->with('status', 'Appointment deleted successfully!');
+    }
+
+
 }

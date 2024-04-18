@@ -39,3 +39,5 @@ route::post('createappointment', [UserController::class, 'store'])->name('create
 route::get('checkstatus', [UserController::class, 'get'])->name('checkstatus')->middleware(['auth', 'verified']);
 
 route::put('admin/update/{id}', [AdminController::class, 'update'])->name('admin/update')->middleware('admin', 'auth', 'verified');
+
+route::get('checkstatus/delete/{id}', [UserController::class, 'destroy'])->name('checkstatus/delete')->middleware(['auth', 'verified']);
