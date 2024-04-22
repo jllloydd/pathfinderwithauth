@@ -68,5 +68,15 @@ class UserController extends Controller
         return redirect('dashboard')->with('status', 'Appointment deleted successfully!');
     }
 
+    public function index(){
+        $userid = Auth::user()->id;
+
+        $appointmentinfo = DB::table('appointments')
+         ->where('user_id', $userid)
+         ->get();
+
+        return view('dashboard', compact('appointmentinfo'));
+    }
+
 
 }

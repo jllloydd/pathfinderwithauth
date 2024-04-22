@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');     
             $table->timestamps();
+            $table->string('appointed_counselor')->default('To be assigned');
         });
     }
 

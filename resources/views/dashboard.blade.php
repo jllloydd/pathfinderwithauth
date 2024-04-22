@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Appointment Booking') }}
+            {{ ('Appointment Booking') }}
         </h2>
     </x-slot>
 
@@ -31,9 +31,24 @@
             </div>
 
             <div class="text-center mt-8">
-                    <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-emerald-900 text-white py-2 mb-3 px-4 rounded-[10px] font-bold text-md hover:bg-emerald-300 hover:text-black">
-                        Make Appointment
+                @if ($appointmentinfo->isNotEmpty())
+
+                <a href="{{route('checkstatus')}}">
+
+                    <button type="button" class="bg-emerald-900 text-white py-2 mb-3 px-4 rounded-[10px] font-bold text-md hover:bg-emerald-300 hover:text-black">
+                    Check Appointment
                     </button>
+                
+                </a>
+
+                @else
+
+                <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-emerald-900 text-white py-2 mb-3 px-4 rounded-[10px] font-bold text-md hover:bg-emerald-300 hover:text-black">
+                    Make Appointment
+                </button>
+
+                @endif
+
             </div>
 
             
